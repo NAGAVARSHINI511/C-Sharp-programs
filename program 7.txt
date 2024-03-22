@@ -1,0 +1,21 @@
+using System;
+using System.IO;
+class Program
+{
+static void Main()
+{
+try
+{
+string sourceFilePath =@"C:\Users\Admin\OneDrive\Source.txt";
+string destinationFilePath=@"C:\Users\Admin\OneDrive\Destination.txt";
+string[] fileContents = File.ReadAllLines(sourceFilePath);
+File.WriteAllLines(destinationFilePath,fileContents);
+Console.WriteLine("File contents copied successfully!");
+}
+catch (Exception ex)
+{
+Console.WriteLine($"An error occurred:{ex.Message}");
+}
+Console.ReadLine(); 
+}
+}

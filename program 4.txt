@@ -1,0 +1,44 @@
+using System;
+class Program
+{
+ static void Main()
+ {
+ // Demonstrate Division by Zero Exception
+ DivideByZeroExceptionExample();
+ // Demonstrate Index Out of Range Exception
+ IndexOutOfRangeExceptionExample();
+ }
+ static void DivideByZeroExceptionExample()
+ {
+ try
+ {
+ int numerator = 10;
+ int denominator = 0;
+ // Attempting to divide by zero
+ int result = numerator / denominator;
+ // The following line won't be reached if an exception occurs
+ Console.WriteLine("Result of division: " + result);
+ }
+ catch (DivideByZeroException ex)
+ {
+ // Catching and handling the DivideByZeroException
+ Console.WriteLine("Error: " + ex.Message);
+ }
+ }
+ static void IndexOutOfRangeExceptionExample()
+ {
+try
+ {
+ int[] numbers = { 1, 2, 3, 4, 5 };
+ // Attempting to access an index that is out of the array's bounds
+ int value = numbers[10];
+ // The following line won't be reached if an exception occurs
+ Console.WriteLine("Value at index 10: " + value);
+ }
+ catch (IndexOutOfRangeException ex)
+ {
+ // Catching and handling the IndexOutOfRangeException
+ Console.WriteLine("Error: " + ex.Message);
+ }
+ }
+}

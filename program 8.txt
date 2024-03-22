@@ -1,0 +1,21 @@
+using System;
+using System.Collections.Generic;
+class StackProgram
+{
+static void Main()
+{
+Stack<int> myStack = new Stack<int>();
+Console.WriteLine("Pushing elements onto the stack:");
+for (int i = 1; i <= 5; i++)
+{
+myStack.Push(i);
+Console.WriteLine($"Pushed: {i}");
+}
+Console.WriteLine("\nPopping elements from the stack:");
+while (myStack.Count > 0)
+{
+int poppedElement = myStack.Pop();
+Console.WriteLine($"Popped: {poppedElement}");
+}
+}
+}\

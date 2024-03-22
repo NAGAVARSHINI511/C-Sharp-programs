@@ -1,0 +1,61 @@
+using System;
+abstract class Shape
+{
+    public abstract double CalculateArea();
+    public abstract double CalculatePerimeter();
+   
+}
+class Circle:Shape
+{
+    private double radius;
+    public Circle(double radius)
+{
+    this.radius=radius;
+}
+    public override double CalculateArea()
+    {
+        return Math.PI*Math.Pow(radius,2);
+    }
+    public override double CalculatePerimeter()
+    {
+        return 2*Math.PI*radius;
+    }
+}
+class Triangle:Shape
+{
+    private double sideA;
+    private double sideB;
+    private double sideC;
+   
+    public Triangle(double sideA,double sideB,double sideC)
+{
+    this.sideA=sideA;
+    this.sideB=sideB;
+    this.sideC=sideC;  
+}
+    public override double CalculateArea()
+    {
+        double s=(sideA+sideB+sideC)/2;
+        return Math.Sqrt(s*(s-sideA)*(s*sideB)*(sideC));
+    }
+    public override double CalculatePerimeter()
+    {
+        return sideA+sideB+sideC;
+    }
+}
+class Program
+{
+    static void Main()
+    {
+    Circle circle=new Circle(5.0);
+    Triangle triangle=new Triangle(3.0,4.0,5.0);
+    Console.WriteLine("Circle:");
+    Console.WriteLine($"Area :{circle.CalculateArea()}");
+    Console.WriteLine($"Perimeter:{circle.CalculatePerimeter()}");
+    Console.WriteLine();
+   
+    Console.WriteLine("Triangle:");
+    Console.WriteLine($"Area :{triangle.CalculateArea()}");
+    Console.WriteLine($"Perimeter:{triangle.CalculatePerimeter()}");
+    Console.WriteLine();
+   }

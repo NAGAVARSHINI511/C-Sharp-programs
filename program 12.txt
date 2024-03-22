@@ -1,0 +1,40 @@
+using System;
+interface Resizable{
+    void ResizeWidth(int width);
+    void ResizeHeight(int height);
+}
+class Rectangle:Resizable{
+    private int width;
+    private int height;
+
+    public Rectangle(int width,int height){
+        this.width=width;
+        this.height=height;
+    }
+    public void DisplayDimensions()
+    {
+        Console.WriteLine($"Current Dimensions:width={width}.Height = {height}");
+    }
+    public void ResizeWidth(int newWidth){
+        width=newWidth;
+        Console.WriteLine($"Resized Width to:{width}");
+    }
+    public void ResizeHeight(int newHeight){
+        height=newHeight;
+        Console.WriteLine($"Resized Height to:{height}");
+    }
+}
+class Program{
+    static void Main()
+    {
+        Rectangle rectangle = new Rectangle(10,5);
+        Console.WriteLine("Initial Dimensions");
+        rectangle.DisplayDimensions();
+        Console.WriteLine();
+
+        rectangle.ResizeWidth(15);
+        rectangle.ResizeHeight(8);
+        Console.WriteLine("\n Updated Dimension");
+        rectangle.DisplayDimensions();
+    }
+}
